@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Javascript and jquery chapper 2</title>
+	</head>
+	<script src="jquery.min.js"></script>
+		<body>
+			<script  type="text/javascript">
+			var i = 0;
+			var arry = [
+						"Danny Welbeck",
+						"Abou Diaby",
+						"Calum Chambers",
+						"Mathieu Debuchy",
+						"Alexis Sanchez",
+						"David Ospina",
+						"Alex Oxlade – Chamberlain",
+						"Theo Walcott",
+						"Olivier Giroud",
+						"Mathieu Flamini",
+						"Santi Cazorla",
+						"Aaron Ramsey",
+						"Mesut Ozil",
+						"Jack Wilshere",
+						"Mikel Arteta",
+						"Tomas Rosicky"
+
+			]
+			var totalPlayer = arry.push("Nacho Monreal","Carl Jenkinson","Per Mertesacker");
+			document.write("<p> The last Player is :  <strong>");
+			
+			document.write(arry[arry.length-1] + '</strong> </p>');
+			document.write("<p> The Frist Player is :  <strong>");
+			document.write(arry[0] + '</strong></p>');
+			
+				for(item in arry){
+				document.write("The Player is  "+ item + "  : "+ arry[item]  + "<br>");
+				}
+			
+			</script>
+		</body>
+</html>

@@ -1,0 +1,159 @@
+<html>
+<head>
+	<title>Java</title>
+</head>
+<body>
+	<div id ="demo"></div>
+	<script type="text/javascript">
+		var elem = document.getElementById("demo");
+		// var objFable = {
+		// 	Name: "Nguyen Van Hoan" ,
+		// 	Dragon : "I 'm trying to developer",
+		// 	slogan: {
+		// 		slogan1: "You must hard more and more ",
+		// 		slogan2 : "he he he he he he he"
+		// 	},
+		// 	printFable : function(){
+		// 		for(var item in this){
+		// 			if((typeof this[item])=="function") continue;
+		// 			if((typeof this[item])== "object"){
+		// 				for(var internalItem in this[item]){
+		// 					elem.innerHTML +=  internalItem + " : "  ;
+		// 					elem.innerHTML += (this[item])[internalItem] + "<br>" ;
+		// 				}
+		// 			}else {
+		// 				elem.innerHTML += item + " : " + this[item] + "<br>" ;
+		// 			}
+		// 		}
+		// 	},
+		// };
+		// objFable.printFable();
+		// var objFable = {
+		// 	Name : "Jack WillSea",
+		// 	Dragon : "I'm from london",
+		// 	printFable: function(){
+		// 		var i =  0;
+		// 		for(var item in this ){
+		// 			if((typeof this[item])=="function") continue;
+		// 			if(i != 0) {
+		// 				elem.innerHTML += " "  ;
+		// 			}
+		// 			elem.innerHTML +=  item + " : " + this[item] + "<br>" ;
+		// 			i++;
+  // 				}
+		// 	},
+		// };
+		// // objFable.printFable();
+		// // copy 
+		// copyJvbFable = objFable;
+		// copyJvbFable.Name = "Nguyen Van Hoan" ;
+		// copyJvbFable.Dragon ="He he he he he" ;
+		// objFable.printFable();
+		//An object with three method
+		// var warlock = {
+		// 	summonTheDargon:function(){
+		// 		elem.innerHTML += "Let summon the Dragon <br>";
+		// 		return this;
+		// 	},
+		// 	rideTheDragon : function(){
+		// 		elem.innerHTML += "Let ride the Dragon <br>" ;
+		// 		return this;
+		// 	},
+		// 	intructTheDragon : function(){
+		// 		elem.innerHTML += "Let intruct th Dragon  <br>";
+		// 		return this;
+		// 	},
+		// };
+		// warlock.summonTheDargon().rideTheDragon().intructTheDragon();
+		var a = new Array("Nguyen van Hoan");
+		elem.innerHTML += a + "<br>"; 
+
+		// var b = new Boollean(true) ;
+		// elem.innerHTML += b;
+
+		var d = new Date() ;
+		elem.innerHTML += "Hom nay la ngay : "+d.getDate() + " / " + d.getMonth() + " / " + d.getFullYear()  + "<br>";
+
+		var s = new String("We fought through the disappointment");
+		elem.innerHTML += s + "<br>"; 
+		var objFable2 = {
+			Name: "Nguyen van Hoan",
+			Slogan : "You must try more........"
+		};
+		elem.innerHTML += "Extensible attribute : " + Object.isExtensible(objFable2) + "<br>" ;
+		prop = Object.getOwnPropertyDescriptor(objFable2,"Slogan") ;
+		elem.innerHTML += " printing Property descriptor for property , Slogan : <br> " ;
+		for(var item in prop ){
+			elem.innerHTML += item + " : " + prop[item] + "<br>" ;
+		}
+		elem.innerHTML += "_______________________________________" + "<br>" ;
+
+
+		function getPropAttributes(obj,prop){
+			var x = " " ,i = 0 ;
+
+			var attr = Object.getOwnPropertyDescriptor(obj,prop);
+			for (item in attr){
+				// if(i++ != 0 ){x += " ";}
+				x = x +  (item + " : " + attr[item] + "<br>");
+			}
+			return x;
+		}
+		function printObject(obj){
+			elem.innerHTML += "Printing objFable3: <br>" ;
+
+			for(item in obj){
+				elem.innerHTML += (item + " : " + " <br> " + getPropAttributes(obj,item) + "<br>" );
+			} 
+			// elem.innerHTML += "<br>" ;
+		}
+		// define an object
+		var objFable3 =  {
+			Name: "Nguyen Van Hoan",
+			Dragon :"You must try more and more" 
+		};
+		printObject(objFable3);
+		elem.innerHTML += "_____________________________________ <br> ";
+		// elem.innerHTML += "PropertyIsEnumerable" + objFable3.PropertyIsEnumerable("Dragon");
+		// elem.innerHTML += "<br><br>";
+		// Object.defineProperty(objFable3,"Dragon",{enumerable:false});
+		// printObject(objFable3);
+		// elem.innerHTML += "PropertyIsEnumerable : " + objFable3.propertyIsEnumerable("Dragon");
+		for(item in window){
+			elem.innerHTML += item + "  , ";
+		}
+		elem.innerHTML += "_____________________________________<br>";
+		for (item in window.document){
+			elem.innerHTML += item + " , " ;
+		}
+		elem.innerHTML += "<br>";
+		elem.innerHTML += "_____________________________________<br>";
+		// Windows loacte.
+		for(item in window.location){
+			elem.innerHTML+= item + " , " ;
+			elem.innerHTML+= window.location[item] 
+			+ "<br>";
+		}
+		elem.innerHTML += "____________________________________<br>";
+
+	</script>
+	<style type="text/css">
+		#idForm{border: 2px solid black ; border-radius: 12px; width :200px;}
+	</style>
+	<img src="./gandalfLOTR.png" id="idImage"></img>
+
+	<form name = "nameFrom" id = "idForm" >
+		<p><b>Form : To Do List </b></p>
+		Check mark completed tasks : <br>
+		<input type = "checkbox" name = "checkboxSpells" id = "idSpell" checked ="true"> Practice Speel <br>
+		<input type= "checkbox" name ="checkboxDragon" id= "idDragon" >Feed the Dragon <br>
+		<input type = "checkbox" name ="checkboxWand" id = "idWand" > Reapear broken wand <br>
+		<P>Note : <br>
+			<input type ="text" name ="textNote" id ="idInputNote" placeholder ="Add Note"> </P>
+			<input type="submit" name="submitbutton" id = "idSubmit" value="Click to Update" >
+	</form>
+	<a href="http://wwww.facebook.com">Facebook: Go to do somthing</a>
+	<script type="text/javascript" src= "./wizard.js"></script>
+</body>
+</html>
+

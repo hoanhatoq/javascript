@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta charset= "UTF-8"> 
+	<title>Jquery</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
+	<script src="js/jquery-1.7.1.js"> </script>
+
+</head>
+<body class = "home">
+	<h1 id="header">A headline</h1>
+  	<p>Some <strong>important</strong> text</p>
+  	<p id="message">Special message</p>
+  	<div id="errors">
+    <h2>Errors:</h2>
+    <span class="pq">Nullam ut nibh sed orci tempor rutrum.</span>
+    <span class="pullquote">...and that's how I discovered the Loch Ness monster.</span>
+	  <span class="pq">...and that's how I discovered the Loch Ness monster.</span>
+
+  </div>
+    <ul>
+        <li class = "subMenu">Item 1</li>
+        <li class = "subMenu">Item 2</li>
+        <li class = "subMenu">Item 3</li>
+        <li class = "subMenu">Item 4</li>
+        <li class = "subMenu">Item 5</li>
+    </ul>
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			$('span.pq').each(function() {
+        	var quote=$(this).clone();
+        	quote.removeClass('pq');
+        	quote.addClass('pullquote');        	
+        	$(this).before(quote);
+      		}); // end each
+          $('#header').html('<h1>JavaScript was here</h1>');
+          $('ul').on('click', 'li', function() {
+          $(this).css('text-decoration': 'line-through');
+          }); // end on
+  		});
+  	</script>
+</body>
+</html>
